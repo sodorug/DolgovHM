@@ -37,12 +37,20 @@ public class base {
         else  if(type.startsWith("2")) {
             System.out.println("Вы выбрали массив слов, введите разменость массива");
             int size = scan.nextInt();
+            String MaxWord = null;
+            int WordLen = 0;
             String[] Slova = new String[size];
             System.out.println("Заполните массив значениями");
             for (int i = 0; i<size;i++)  {
                 Slova[i]= scan.next();
+                if(Slova[i].length()>WordLen){
+                    MaxWord = Slova[i];
+                    WordLen = Slova[i].length();
+                }
+
+
             }
-            System.out.println(Slova.length);
+            System.out.println(MaxWord);
         }
         }
 }
