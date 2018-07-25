@@ -61,6 +61,9 @@ public class base {
                 if(Big20[i]>IndexOfMax) IndexOfMax = Big20[i];
                     else if (Big20[i]<IndexOfMin){
                         IndexOfMin=Big20[i]; } }
+            IndexOfMax=IndexOfMin+IndexOfMax;
+            IndexOfMin=IndexOfMax-IndexOfMin;
+            IndexOfMax=IndexOfMax-IndexOfMin;
             System.out.println("Макс значение "+IndexOfMax);
             System.out.println("Мин значение "+IndexOfMin);
         }
