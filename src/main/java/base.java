@@ -54,12 +54,15 @@ public class base {
             System.out.println("Вы выбрали массив из 20 символов");
             int Big20[];
             Big20 = new int[20];
+            int IndexOfMax = 0;
+            int IndexOfMin = 0;
             for (int i =0;i<Big20.length;i++){
-                int a = -15;
-                int b = 15;
                 Big20[i]=((int)(Math.random()*20)-10);
-                
-            }
+                if(Big20[i]>IndexOfMax) IndexOfMax = Big20[i];
+                    else if (Big20[i]<IndexOfMin){
+                        IndexOfMin=Big20[i]; } }
+            System.out.println("Макс значение "+IndexOfMax);
+            System.out.println("Мин значение "+IndexOfMin);
         }
         }
 }
