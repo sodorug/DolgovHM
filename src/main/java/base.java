@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class base {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите тип желаемой операции 1(Калькулятор) или 2(Массив слов)");
+        System.out.println("Введите тип желаемой операции 1(Калькулятор), 2(Массив слов),3(Массив из 20 цифр) или 4(формирование подарка на НГ");
         String type = scan.next();
-        if(type.startsWith("1")) {
+        if(type.startsWith("1"))
+        {
             System.out.println("Вы выбрали Калькулятор");
             System.out.println("Введите первое число");
             double first = scan.nextDouble();
@@ -34,7 +35,8 @@ public class base {
                 System.out.printf("%.4f", +sum);
             }
         }
-        else  if(type.startsWith("2")) {
+        else  if(type.startsWith("2"))
+        {
             System.out.println("Вы выбрали массив слов, введите разменость массива");
             int size = scan.nextInt();
             String MaxWord = null;
@@ -45,12 +47,19 @@ public class base {
                 Slova[i]= scan.next();
                 if(Slova[i].length()>WordLen){
                     MaxWord = Slova[i];
-                    WordLen = Slova[i].length();
+                    WordLen = Slova[i].length(); }
                 }
-
-
+            System.out.println(MaxWord); }
+        else if(type.startsWith("3")){
+            System.out.println("Вы выбрали массив из 20 символов");
+            int Big20[];
+            Big20 = new int[20];
+            for (int i =0;i<Big20.length;i++){
+                int a = -15;
+                int b = 15;
+                Big20[i]=((int)(Math.random()*20)-10);
+                
             }
-            System.out.println(MaxWord);
         }
         }
 }
