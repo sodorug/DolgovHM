@@ -74,7 +74,27 @@ public class base {
              Найти общий вес подарка, общую стоимость подарка и вывести на консоль информацию о всех сладостях в подарке.
              */
             System.out.println("Вы выбрали формирование подарка на новый год");
+            int swSize = 4;
+            int swWeight = 0;
+            int swPrice = 0;
 
+            sweety[] sweeties = new sweety[swSize];
+            sweeties[0] = new sweety("Конфета1", 11, 101, "Хамстер1");
+            sweeties[1] = new sweety("Конфета2", 12, 102, "Хамстер2");
+            sweeties[2] = new sweety("Конфета3", 13, 103, "Хамстер3");
+            sweeties[3] = new sweety("Конфета4", 14, 104, "Хамстер4");
+
+            for (int i = 0; i<swSize;i++) {
+                swWeight = swWeight + sweeties[i].weight;
+                swPrice = swPrice + sweeties[i].price;
+            }
+
+            System.out.println("Общий вес: " + swWeight);
+            System.out.println("Общая цена: " + swPrice);
+            System.out.println("Состав подарка: ");
+            for (int i = 0; i<swSize;i++) {
+                sweeties[i].printInfo();
+            }
         }
         }
 }
