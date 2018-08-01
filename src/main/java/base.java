@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class base {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите тип желаемой операции 1(Калькулятор), 2(Массив слов),3(Массив из 20 цифр) или 4(формирование подарка на НГ");
+        System.out.println("Введите тип желаемой операции 1(Калькулятор), 2(Массив слов),3(Массив из 20 цифр) или 4(формирование подарка на НГ) или 5(ООП Калькулятор)");
         String type = scan.next();
         if(type.startsWith("1"))
         {
@@ -100,6 +100,17 @@ public class base {
             System.out.println("Общий вес: " + podarok.getWeight());
             System.out.println("Общая цена: " + podarok.getPrice());
             podarok.printAll();
+        }
+        else  if(type.startsWith("5")){
+            System.out.println("Вы выбрали ООП калькулятор");
+            System.out.println("Введите первое число");
+            int a = scan.nextInt();
+            System.out.println("Введите второе число");
+            int b = scan.nextInt();
+            System.out.println("Введите тип операции + - / *");
+            String operation = scan.next();
+            Calc CalcIt = new Calc(a,b,operation);
+            System.out.println("результата операции "+CalcIt.sum);
         }
         }
 }
