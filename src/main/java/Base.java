@@ -135,8 +135,8 @@ public class Base {
         else if(type.startsWith("6")) {
             Scanner scn = new Scanner(System.in);
             System.out.println("Введите путь к файлу");
-            String filename = scn.next();
-            FileProcess fileProcess = new FileProcess(filename);
+            String filePath = scn.next();
+            FileProcess fileProcess = new FileProcess(filePath);
             fileProcess.ReadWords();
             fileProcess.printStat();
             fileProcess.printMaxCntWord();
