@@ -1,6 +1,9 @@
+import oopCalc.*;
+import podarki.Present;
+
 import java.util.Scanner;
 
-public class base {
+public class Base {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите тип желаемой операции 1(Калькулятор), 2(Массив слов),3(Массив из 20 цифр) или 4(формирование подарка на НГ) или 5(ООП Калькулятор)");
@@ -78,11 +81,11 @@ public class base {
             int swWeight = 0;
             int swPrice = 0;
 
-            sweety[] sweeties = new sweety[swSize];
-            sweeties[0] = new sweety("Конфета1", 11, 101, "Хамстер1");
-            sweeties[1] = new sweety("Конфета2", 12, 102, "Хамстер2");
-            sweeties[2] = new sweety("Конфета3", 13, 103, "Хамстер3");
-            sweeties[3] = new sweety("Конфета4", 14, 104, "Хамстер4");
+            podarki.Sweety[] sweeties = new podarki.Sweety[swSize];
+            sweeties[0] = new podarki.Sweety("Конфета1", 11, 101, "Хамстер1");
+            sweeties[1] = new podarki.Sweety("Конфета2", 12, 102, "Хамстер2");
+            sweeties[2] = new podarki.Sweety("Конфета3", 13, 103, "Хамстер3");
+            sweeties[3] = new podarki.Sweety("Конфета4", 14, 104, "Хамстер4");
 
             for (int i = 0; i<swSize;i++) {
                 swWeight = swWeight + sweeties[i].weight;
@@ -96,7 +99,7 @@ public class base {
                 sweeties[i].printInfo();
             }*/
 
-            present podarok = new present();
+            Present podarok = new Present();
             System.out.println("Общий вес: " + podarok.getWeight());
             System.out.println("Общая цена: " + podarok.getPrice());
             podarok.printAll();
@@ -109,8 +112,23 @@ public class base {
             int b = scan.nextInt();
             System.out.println("Введите тип операции + - / *");
             String operation = scan.next();
-            Calc CalcIt = new Calc(a,b,operation);
-            System.out.println("результата операции "+CalcIt.sum);
+
+            CalcIt oper = null;
+            if ("+".equals(operation)) {
+                oper = new Summ();
+            } else if ("-".equals(operation)) {
+                oper = new Minus();
+            } else if ("/".equals(operation)) {
+                oper = new Delen();
+            } else if ("*".equals(operation)) {
+                oper = new Umnoj();
+            } else {
+                System.out.println("Введена неподдерживаемая операция " + operation);
+            }
+
+            if (oper != null) {
+                System.out.println("результата операции " + oper.calc(a, b));
+            }
         }
         }
 }
