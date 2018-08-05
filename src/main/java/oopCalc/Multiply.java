@@ -1,7 +1,7 @@
 package oopCalc;
 
-public class Umnoj implements CalcIt {
-    public Umnoj() {
+public class Multiply implements CalcIt {
+    public Multiply() {
     }
 
     public int calc(int a, int b) {

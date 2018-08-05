@@ -1,7 +1,7 @@
 package oopCalc;
 
-public class Minus implements CalcIt {
-    public Minus() {
+public class Subtract implements CalcIt {
+    public Subtract() {
     }
 
     public int calc(int a, int b) {

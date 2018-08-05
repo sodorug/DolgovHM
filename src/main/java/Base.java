@@ -1,3 +1,4 @@
+import fileWordCounter.FileProcess;
 import oopCalc.*;
 import podarki.Present;
 
@@ -6,7 +7,8 @@ import java.util.Scanner;
 public class Base {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите тип желаемой операции 1(Калькулятор), 2(Массив слов),3(Массив из 20 цифр) или 4(формирование подарка на НГ) или 5(ООП Калькулятор)");
+        System.out.println("Введите тип желаемой операции 1(Калькулятор), 2(Массив слов),3(Массив из 20 цифр) или 4(формирование подарка на НГ) или 5(ООП Калькулятор)" +
+                " или 6(Разбор файла на слова, вывод статистики)");
         String type = scan.next();
         if(type.startsWith("1"))
         {
@@ -115,13 +117,13 @@ public class Base {
 
             CalcIt oper = null;
             if ("+".equals(operation)) {
-                oper = new Summ();
+                oper = new Add();
             } else if ("-".equals(operation)) {
-                oper = new Minus();
+                oper = new Subtract();
             } else if ("/".equals(operation)) {
-                oper = new Delen();
+                oper = new Divide();
             } else if ("*".equals(operation)) {
-                oper = new Umnoj();
+                oper = new Multiply();
             } else {
                 System.out.println("Введена неподдерживаемая операция " + operation);
             }
@@ -130,5 +132,15 @@ public class Base {
                 System.out.println("результата операции " + oper.calc(a, b));
             }
         }
+        else if(type.startsWith("6")) {
+            Scanner scn = new Scanner(System.in);
+            System.out.println("Введите путь к файлу");
+            String filename = scn.next();
+            FileProcess fileProcess = new FileProcess(filename);
+            fileProcess.ReadWords();
+            fileProcess.printStat();
+            fileProcess.printMaxCntWord();
+
         }
+    }
 }

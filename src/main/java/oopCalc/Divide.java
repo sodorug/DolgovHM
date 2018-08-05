@@ -1,7 +1,7 @@
 package oopCalc;
 
-public class Delen implements CalcIt {
-    public Delen() {
+public class Divide implements CalcIt {
+    public Divide() {
     }
 
     public int calc(int a, int b) {
